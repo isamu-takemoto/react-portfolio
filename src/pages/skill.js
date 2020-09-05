@@ -6,68 +6,98 @@ import SimpleRating from '../components/rating';
 import RatingBig from '../components/ratingBig';
 
 const useStyles = theme => ({
-    contents: {
-      display:'flex',
-      height: 430,
-      marginTop: 30,
+  contents: {
+    display: 'flex',
+    height: 430,
+    marginTop: 30,
+    [theme.breakpoints.down('sm')]: {
+      display: 'inline',
     },
-    front: {
-      boxShadow:'0 1px 4px 1px rgba(0, 0, 0, 0.1)',
-      height: 400,
-      width: 650,
-      borderRadius: 8,
-      marginRight: 30,
+  },
+  skillsImage: {
+    display: 'block',
+    margin: 'auto',
+    [theme.breakpoints.down('sm')]: {
+      width: 350,
+      height: 200,
     },
-    back: {
-      boxShadow:'0 1px 4px 1px rgba(0, 0, 0, 0.1)',
-      height: 400,
-      width: 650,
-      borderRadius: 8,
+  },
+  front: {
+    width: 650,
+    boxShadow:'0 1px 4px 1px rgba(0, 0, 0, 0.1)',
+    height: 400,
+    borderRadius: 8,
+    marginRight: 30,
+    [theme.breakpoints.down('sm')]: {
+      width: '100vw',
+      marginTop: 20,
+      margin: '0 auto',
     },
-    contentsTitle: {
-      color: '#666666',
-      fontSize: '1.6rem',
-      textAlign: 'center',
-      marginTop: 10,
-      letterSpacing: 3,
+  },
+  back: {
+    width: 650,
+    boxShadow:'0 1px 4px 1px rgba(0, 0, 0, 0.1)',
+    height: 400,
+    borderRadius: 8,
+    [theme.breakpoints.down('sm')]: {
+      width: '100vw',
+      marginTop: 20,
+      margin: '0 auto',
     },
-    content: {
-      margin: 20,
-      width: 460,
-      display:'flex',
-      flexWrap: 'wrap',
+  },
+  contentsTitle: {
+    color: '#666666',
+    fontSize: '1.6rem',
+    textAlign: 'center',
+    marginTop: 10,
+    letterSpacing: 3,
+  },
+  content: {
+    width: 460,
+    display:'flex',
+    flexWrap: 'wrap',
+    margin: '0 auto',
+    marginTop: 20,
+    [theme.breakpoints.down('sm')]: {
+      width: '100vw',
     },
-    skill: {
-      marginLeft: 10,
-      marginRight: 10,
-      marginTop: 10,
+  },
+  skill: {
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+    transition: 'transform 0.3s ease-in-out',
+    '&:hover': {
+      opacity: '0.8',
+      transform: 'translateY(-1em)',
       transition: 'transform 0.3s ease-in-out',
-      '&:hover': {
-        opacity: '0.8',
-        transform: 'translateY(-1em)',
-        transition: 'transform 0.3s ease-in-out',
-      },
     },
-    icon: {
-      fontSize: 85,
+    [theme.breakpoints.down('sm')]: {
+      width: 70,
+      height: 100,
+      marginTop: 40,
     },
-    svg: {
-      fontSize: 85,
-    },
-    guide: {
-      marginLeft: 10,
-      marginRight: 10,
-      marginTop: 10,
-      width: 460,
-    },
-    rate: {
-      marginBottom: 12,
-    },
-    guideText: {
-      color: '#666666',
-      fontSize: '1.0rem',
-    },
-  });
+  },
+  icon: {
+    fontSize: 85,
+  },
+  svg: {
+    fontSize: 85,
+  },
+  guide: {
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+    width: 460,
+  },
+  rate: {
+    marginBottom: 12,
+  },
+  guideText: {
+    color: '#666666',
+    fontSize: '1.0rem',
+  },
+});
 
 class Skills extends React.Component {
   constructor(props) {
@@ -85,6 +115,7 @@ class Skills extends React.Component {
       <section>
         <ContentTitle title={this.state.title} subtitle={this.state.subtitle}/>
         <Container>
+          <img src="/images/skills.png" alt="skillsImage" className={classes.skillsImage} width="690px" height="410px" />
           <div className={classes.contents}>
             <div className={classes.front}>
               <div className={classes.contentsTitle}>
@@ -139,7 +170,7 @@ class Skills extends React.Component {
                   <div>
                     <img src="/images/reactN.png" alt="React Native" width="88px" height="98px" />
                   </div>
-                  <SimpleRating rate='3' />
+                  <SimpleRating rate='2' />
                 </div>
               </div>
             </div>
@@ -177,6 +208,12 @@ class Skills extends React.Component {
                     <i class="devicon-oracle-original colored"></i>
                   </div>
                   <SimpleRating rate='3' />
+                </div>
+                <div className={classes.skill}>
+                  <div className={classes.icon}>
+                    <img src="/images/fB.png" alt="firebase" width="85px" height="78px" />
+                  </div>
+                  <SimpleRating rate='2' />
                 </div>
               </div>
             </div> 
@@ -220,6 +257,18 @@ class Skills extends React.Component {
                 <div className={classes.skill}>
                   <div className={classes.icon}>
                     <i class="devicon-photoshop-line colored"></i>
+                  </div>
+                  <SimpleRating rate='2' />
+                </div>
+                <div className={classes.skill}>
+                  <div className={classes.icon}>
+                    <i class="devicon-slack-plain-wordmark colored"></i>
+                  </div>
+                  <SimpleRating rate='3' />
+                </div>
+                <div className={classes.skill}>
+                  <div className={classes.icon}>
+                  <img src="/images/bL.jpg" alt="BackLog" width="80px" height="80px" />
                   </div>
                   <SimpleRating rate='3' />
                 </div>

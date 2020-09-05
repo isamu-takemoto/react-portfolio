@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles} from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     appBarButtonMenu: {
@@ -11,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#4bc0c8',
   },
   },
+  link: {
+    color: 'inherit',
+    textDecoration: 'none',
+},
   }));
 
 export default function SimpleMenu() {
@@ -37,9 +42,9 @@ export default function SimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>About me</MenuItem>
-        <MenuItem onClick={handleClose}>Skills</MenuItem>
-        <MenuItem onClick={handleClose}>Portfolio</MenuItem>
+      <Link to="/profile" className={classes.link} ><MenuItem onClick={handleClose}>About me</MenuItem></Link>
+      <Link to="/skills" className={classes.link} ><MenuItem onClick={handleClose}>Skills</MenuItem></Link>
+      <Link to="/works" className={classes.link} ><MenuItem onClick={handleClose}>Works</MenuItem></Link>
       </Menu>
     </div>
   );

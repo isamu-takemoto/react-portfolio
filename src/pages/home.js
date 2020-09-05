@@ -3,48 +3,67 @@ import { makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
-    contents: {
-      display: 'flex',
-      flexDirection: 'column',
+  contents: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: '100 0',
+    height: '100vh',
+    [theme.breakpoints.up('sm')]: {
       alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      padding: '100 0',
     },
-    home: {
-      backgroundColor:'#f7fcfd',
-    },
-    button: {
-      color: '#4bc0c8',
+  },
+  home: {
+    backgroundColor:'#f7fcfd',
+  },
+  button: {
+    color: '#4bc0c8',
+    backgroundColor: '#fff',
+    margin: 8,
+    border: '1px solid rgba(75, 192, 200, 0.5)',
+    boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
+    '&:hover': {
+      border: '1px solid #4bc0c8',
       backgroundColor: '#fff',
-      margin: 8,
-      border: '1px solid rgba(75, 192, 200, 0.5)',
-      boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
-      '&:hover': {
-        border: '1px solid #4bc0c8',
-        backgroundColor: '#fff',
 },
+  },
+  topImage: {
+    height: 330,
+    marginBottom: 10,
+    marginTop:110,
+    [theme.breakpoints.down('sm')]: {
+      height: 200,
     },
-    topImage: {
-      height: 280,
-      marginBottom: 40,
-    },
-    topTitle: {
-      fontWeight: 700,
-      letterSpacing: 4,
-      color: '#666',
+  },
+  topTitle: {
+    fontWeight: 700,
+    letterSpacing: 4,
+    color: '#666',
+    fontSize: '4rem',
+    fontFamily: 'Caveat',
+    [theme.breakpoints.down('sm')]: {
+      fontWeight: 600,
       fontSize: '2rem',
     },
-    topText: {
-      textAlign: 'center',
+  },
+  topText: {
+    textAlign: 'center',
+  },
+  subText: {
+    color: '#999',
+    margin: '14 0',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem',
     },
-    subText: {
-      color: '#999',
-      margin: '14 0',
-    },
-  }));
+  },
+  link: {
+      color: 'inherit',
+      textDecoration: 'none',
+  },
+}));
 
 function Home() {
   const classes = useStyles();
@@ -52,22 +71,24 @@ function Home() {
   return (
     <section className={classes.home}>
       <Container maxWidth="md" className={classes.contents}>
-        <img src="/images/app_development.png" alt="devImage" className={classes.topImage} />
+        <img src="/images/desk.png" alt="devImage" className={classes.topImage} />
         <div className={classes.topText}>
           <Typography component="h2" className={classes.topTitle} >
-            楽するための努力は惜しまない
+            I'm Web Developer
           </Typography>
           <p className={classes.subText}>
-              32才の時に会計業界からWebの世界にバックエンドエンジニアとして飛び込みました。
+              29才の時にWebの世界にバックエンドエンジニアとして飛び込みました。
               <br />
               バックエンドだけでなく、フロントエンドもインフラもいけちゃうフルスタックエンジニアを目指しています。
           </p>
-          <Button variant="outlined" className={classes.button}>
+          <Link to="/works" className={classes.link}><Button variant="outlined" className={classes.button}>
             制作物を見る
           </Button>
-          <Button variant="outlined" className={classes.button}>
+          </Link>
+          <Link to="/contactForm" className={classes.link}><Button variant="outlined" className={classes.button}>
             メッセージを送る
           </Button>
+          </Link>
         </div>
       </Container>
     </section>
