@@ -91,7 +91,7 @@ export default function SimpleModal(props) {
   };
 
   const gitHubUrl = 'https://github.com/isamu-takemoto/react-portfolio';
-  const portfolioUrl = '';
+  const portfolioUrl = 'https://isamu-takemoto.github.io/react-portfolio/';
 
   const workFlag = ['1', '2', '3', '4'];
 
@@ -126,7 +126,7 @@ export default function SimpleModal(props) {
               <img src={props.Images} alt="" className={classes.modalImage} />
               <div>
                 <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(gitHubUrl);}}><GitHubIcon/></Button>
-                <Button className={classes.appBarButton} color="inherit" ><LinkIcon/></Button>
+                <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(portfolioUrl);}}><LinkIcon/></Button>
               </div>
               <div>
                 {portfolio.map(skill =>
