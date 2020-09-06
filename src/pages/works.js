@@ -66,7 +66,7 @@ class Works extends React.Component {
       title: 'Works',
       subtitle: '実績',
       workFlag: ['1', '2', '3', '4'],
-      portfolioImg: '/images/portfolio.png',
+      portfolioImg: './images/portfolio.png',
       portfolioTitle: "Take's Portfolio",
       portfolioDate: '2020.08',
       portfolioSummary: 'React製のポートフォリオサイトです。',

@@ -115,7 +115,7 @@ class Skills extends React.Component {
       <section>
         <ContentTitle title={this.state.title} subtitle={this.state.subtitle}/>
         <Container>
-          <img src="/images/skills.png" alt="skillsImage" className={classes.skillsImage} width="690px" height="410px" />
+          <img src="./images/skills.png" alt="skillsImage" className={classes.skillsImage} width="690px" height="410px" />
           <div className={classes.contents}>
             <div className={classes.front}>
               <div className={classes.contentsTitle}>
@@ -168,7 +168,7 @@ class Skills extends React.Component {
                 </div>
                 <div className={classes.skill}>
                   <div>
-                    <img src="/images/reactN.png" alt="React Native" width="88px" height="98px" />
+                    <img src="./images/reactN.png" alt="React Native" width="88px" height="98px" />
                   </div>
                   <SimpleRating rate='2' />
                 </div>
@@ -193,7 +193,7 @@ class Skills extends React.Component {
                 </div>
                 <div className={classes.skill}>
                   <div className={classes.icon}>
-                    <img src="/images/netF.png" alt=".NET Framework" width="78px" height="78px" />
+                    <img src="./images/netF.png" alt=".NET Framework" width="78px" height="78px" />
                   </div>
                   <SimpleRating rate='3' />
                 </div>
@@ -211,7 +211,7 @@ class Skills extends React.Component {
                 </div>
                 <div className={classes.skill}>
                   <div className={classes.icon}>
-                    <img src="/images/fB.png" alt="firebase" width="85px" height="78px" />
+                    <img src="./images/fB.png" alt="firebase" width="85px" height="78px" />
                   </div>
                   <SimpleRating rate='2' />
                 </div>
@@ -238,7 +238,7 @@ class Skills extends React.Component {
                 </div>
                 <div className={classes.skill}>
                   <div className={classes.icon}>
-                    <img src="/images/svn.png" alt="React Native" width="85px" height="75px" />
+                    <img src="./images/svn.png" alt="React Native" width="85px" height="75px" />
                   </div>
                   <SimpleRating rate='3' />
                 </div>
@@ -268,7 +268,7 @@ class Skills extends React.Component {
                 </div>
                 <div className={classes.skill}>
                   <div className={classes.icon}>
-                  <img src="/images/bL.jpg" alt="BackLog" width="80px" height="80px" />
+                  <img src="./images/bL.jpg" alt="BackLog" width="80px" height="80px" />
                   </div>
                   <SimpleRating rate='3' />
                 </div>

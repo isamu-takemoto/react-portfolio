@@ -33,7 +33,7 @@ const Routes = () => {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL} >
       <ButtonAppBar />
       <Routes />
     </Router>

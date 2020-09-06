@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     transform : 'translate(-50%, -50%)',
     [theme.breakpoints.down('sm')]: {
       width: '80vw',
-      height: '70vh',
+      height: '80vh',
       display: 'inline',
     },
   },
@@ -97,7 +97,12 @@ export default function SimpleModal(props) {
 
   let portfolio = ['React', 'Material-UI','React router'];
 
-  let portfolioText = ['React.jsで静的サイト出力','UIライブラリにMaterial UI','react-router-domを使用したルーティング'];
+  let portfolioText = [
+    'React.jsで静的サイト出力',
+    'UIライブラリにMaterial UI',
+    'react-router-domを使用したルーティング',
+    'レスポンシブ対応',
+    'GitHub Pagesでサイトをホスティング'];
 
   if (props.workFlag === workFlag[1]) {
     portfolio = ['React'];
@@ -122,39 +127,39 @@ export default function SimpleModal(props) {
         onClose={handleClose}
       >
         <div  className={classes.paper}>
-            <div className={classes.app}>
-              <img src={props.Images} alt="" className={classes.modalImage} />
-              <div>
-                <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(gitHubUrl);}}><GitHubIcon/></Button>
-                <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(portfolioUrl);}}><LinkIcon/></Button>
-              </div>
-              <div>
-                {portfolio.map(skill =>
-                <Chip key={skill} label={skill} variant="outlined" className={classes.skillIcon} />
-                )}
-              </div>
+          <div className={classes.app}>
+            <img src={props.Images} alt="" className={classes.modalImage} />
+            <div>
+              <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(gitHubUrl);}}><GitHubIcon/></Button>
+              <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(portfolioUrl);}}><LinkIcon/></Button>
             </div>
-            <div className={classes.Work}>
-              <div className="header">
-                <Typography className={classes.title}>
-                  {props.title}
-                </Typography>
-                <p className="during">{props.date}</p>
-              </div>
-              <div className={classes.coment}>
-                <p>
-                  {props.summary}
-                  <br />
-                  
-                  <br />
-                  やっていることは以下の通りです。
-                  <br />
-                    {portfolioText.map(Text =>
-                      <li>{Text}</li>
-                    )}
-                </p>
-              </div>
+            <div>
+              {portfolio.map(skill =>
+              <Chip key={skill} label={skill} variant="outlined" className={classes.skillIcon} />
+              )}
             </div>
+          </div>
+          <div className={classes.Work}>
+            <div className="header">
+              <Typography className={classes.title}>
+                {props.title}
+              </Typography>
+              <p className="during">{props.date}</p>
+            </div>
+            <div className={classes.coment}>
+              <p>
+                {props.summary}
+                <br />
+                
+                <br />
+                やっていることは以下の通りです。
+                <br />
+                  {portfolioText.map(Text =>
+                    <li>{Text}</li>
+                  )}
+              </p>
+            </div>
+          </div>
         </div>
       </Modal>
     </div>
