@@ -71,7 +71,7 @@ function Home() {
   return (
     <section className={classes.home}>
       <Container maxWidth="md" className={classes.contents}>
-        <img src="/images/desk.png" alt="devImage" className={classes.topImage} />
+        <img src="https://github.com/isamu-takemoto/react-portfolio/blob/master/public/images/desk.png" alt="devImage" className={classes.topImage} />
         <div className={classes.topText}>
           <Typography component="h2" className={classes.topTitle} >
             I'm Web Developer
