@@ -52,7 +52,7 @@ export default function ButtonAppBar() {
       <AppBar className={classes.appBar} position="fixed">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Take
+            <Link to="/" className={classes.link}>Take.dev</Link>   
           </Typography>
            <TemporaryDrawer />
            <div className={classes.item}>

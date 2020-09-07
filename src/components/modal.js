@@ -6,6 +6,7 @@ import LinkIcon from '@material-ui/icons/Link';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -14,7 +15,6 @@ const useStyles = makeStyles(theme => ({
     height: 500,
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(2, 4, 3),
-    display: 'flex',
     boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
     top : '50%',
     left : '50%',
@@ -25,7 +25,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       width: '80vw',
       height: '80vh',
-      display: 'inline',
     },
   },
   Image: {
@@ -39,12 +38,19 @@ const useStyles = makeStyles(theme => ({
       height: 250,
     },
   },
+  contents: {
+    display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      display: 'inline',
+    },
+  },
   modalImage: {
     borderRadius: 16,
     boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
     width: 500,
     height: 320,
     cursor: 'pointer',
+    marginTop: 20,
     [theme.breakpoints.down('sm')]: {
       width: 250,
       height: 150,
@@ -52,9 +58,9 @@ const useStyles = makeStyles(theme => ({
   },
   Work: {
     marginLeft: 30,
+    marginTop: 20,
     [theme.breakpoints.down('sm')]: {
       fontSize: '0.8rem',
-      marginTop: 10,
     },
   },
   title: {
@@ -73,6 +79,17 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       width: 90,
       fontSize: '0.7rem',
+    },
+  },
+  cancel: {
+    color: '#666666',
+    cursor: 'pointer',
+    marginLeft: 880,
+    '&:hover, &.focus': {
+      opacity: '0.6',
+    },
+    [theme.breakpoints.down('sm')]: {
+      float: 'right',
     },
   },
 }));
@@ -95,9 +112,9 @@ export default function SimpleModal(props) {
 
   const workFlag = ['1', '2', '3', '4'];
 
-  let portfolio = ['React', 'Material-UI','React router'];
+  let skills = ['React', 'Material-UI','React router'];
 
-  let portfolioText = [
+  let skillsText = [
     'React.jsで静的サイト出力',
     'UIライブラリにMaterial UI',
     'react-router-domを使用したルーティング',
@@ -105,16 +122,19 @@ export default function SimpleModal(props) {
     'GitHub Pagesでサイトをホスティング'];
 
   if (props.workFlag === workFlag[1]) {
-    portfolio = ['React'];
-    portfolioText = ['あ','い','う','え','お','か','き','く','け'];
+    skills = ['Wordpress',];
+    skillsText = [
+      '個人ブログ用にWordpressを使用',
+      'ヘッダー、グロナビ、カード表示等を管理画面でカスタマイズ',
+      'HTML,CSSでデザインを微調整'];
   } else if (props.workFlag === workFlag[2])
   {
-    portfolio = ['React','isamu'];
-    portfolioText = ['あ','い','う','え','お','か','き'];
+    skills = ['React','isamu'];
+    skillsText = ['あ','い','う','え','お','か','き'];
   } else if (props.workFlag === workFlag[3])
   {
-    portfolio = ['React','takemoto'];
-    portfolioText = ['あ','い','う','え','お'];
+    skills = ['React','takemoto'];
+    skillsText = ['あ','い','う','え','お'];
   }
 
   return (
@@ -127,37 +147,42 @@ export default function SimpleModal(props) {
         onClose={handleClose}
       >
         <div  className={classes.paper}>
-          <div className={classes.app}>
-            <img src={props.Images} alt="" className={classes.modalImage} />
-            <div>
-              <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(gitHubUrl);}}><GitHubIcon/></Button>
-              <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(portfolioUrl);}}><LinkIcon/></Button>
-            </div>
-            <div>
-              {portfolio.map(skill =>
-              <Chip key={skill} label={skill} variant="outlined" className={classes.skillIcon} />
-              )}
-            </div>
+          <div className={classes.cancel}>
+            <CancelIcon onClick={handleClose} />
           </div>
-          <div className={classes.Work}>
-            <div className="header">
-              <Typography className={classes.title}>
-                {props.title}
-              </Typography>
-              <p className="during">{props.date}</p>
+          <div className={classes.contents}>
+            <div className={classes.app}>
+              <img src={props.Images} alt="" className={classes.modalImage} />
+              <div>
+                <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(gitHubUrl);}}><GitHubIcon/></Button>
+                <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(portfolioUrl);}}><LinkIcon/></Button>
+              </div>
+              <div>
+                {skills.map(skill =>
+                <Chip key={skill} label={skill} variant="outlined" className={classes.skillIcon} />
+                )}
+              </div>
             </div>
-            <div className={classes.coment}>
-              <p>
-                {props.summary}
-                <br />
-                
-                <br />
-                やっていることは以下の通りです。
-                <br />
-                  {portfolioText.map(Text =>
-                    <li>{Text}</li>
-                  )}
-              </p>
+            <div className={classes.Work}>
+              <div className="header">
+                <Typography className={classes.title}>
+                  {props.title}
+                </Typography>
+                <p className="during">{props.date}</p>
+              </div>
+              <div className={classes.coment}>
+                <p>
+                  {props.summary}
+                  <br />
+                  
+                  <br />
+                  やっていることは以下の通りです。
+                  <br />
+                    {skillsText.map(Text =>
+                      <li>{Text}</li>
+                    )}
+                </p>
+              </div>
             </div>
           </div>
         </div>
