@@ -91,12 +91,6 @@ class Works extends React.Component {
             <div className={classes.app}>
               <SimpleModal Images={this.state.blogImg} workFlag={this.state.workFlag[1]} title={this.state.blogTitle} date={this.state.blogDate} summary={this.state.blogSummary}/>
             </div>
-            <div className={classes.app}>
-              <SimpleModal Images={this.state.portfolioImg} workFlag={this.state.workFlag[2]}/>
-            </div>
-            <div className={classes.app}>
-              <SimpleModal Images={this.state.portfolioImg} workFlag={this.state.workFlag[3]}/>
-            </div>
           </div>
         </Container>
       </section>
