@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     transform : 'translate(-50%, -50%)',
     [theme.breakpoints.down('sm')]: {
       width: '80vw',
-      height: '80vh',
+      height: '90vh',
     },
   },
   Image: {

@@ -176,14 +176,14 @@ class Profile extends React.Component {
                     <div className="header">
                       <p className="during">2019.10 - 現在</p>
                       <Typography variant="h3" className="title">
-                        人材系WBEサービス継続開発 / Engineer
+                        人材系ダイレクトソージングサービスの継続開発 / Engineer
                       </Typography>
                     </div>
                     <div className="body">
                       <p>
                         Webサービスの開発がしたく、同社のIT部門に異動。
                         <br />
-                        C#/.NET Framework,React/Reduxを採用した自グループサービス継続開発PJTの開発エンジニアとして従事。
+                        C#/.NET Framework,React/Redux,AES検索を採用した自グループサービス継続開発PJTの開発エンジニアとして従事。
                         <br />
                         要件定義、設計、製造、テスト、リリースの各工程を担当。
                         <br />
