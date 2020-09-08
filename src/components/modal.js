@@ -107,8 +107,8 @@ export default function SimpleModal(props) {
     setOpen(false);
   };
 
-  const gitHubUrl = 'https://github.com/isamu-takemoto/react-portfolio';
-  const portfolioUrl = 'https://isamu-takemoto.github.io/react-portfolio/';
+  let gitHubUrl = 'https://github.com/isamu-takemoto/react-portfolio';
+  let contentUrl = 'https://isamu-takemoto.github.io/react-portfolio/';
 
   const workFlag = ['1', '2', '3', '4'];
 
@@ -127,6 +127,8 @@ export default function SimpleModal(props) {
       '個人ブログ用にWordpressを使用',
       'ヘッダー、グロナビ、カード表示等を管理画面でカスタマイズ',
       'HTML,CSSでデザインを微調整'];
+    gitHubUrl = '';
+    contentUrl = 'http://isamblog.com/';
   } else if (props.workFlag === workFlag[2])
   {
     skills = ['React','isamu'];
@@ -154,8 +156,8 @@ export default function SimpleModal(props) {
             <div className={classes.app}>
               <img src={props.Images} alt="" className={classes.modalImage} />
               <div>
-                <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(gitHubUrl);}}><GitHubIcon/></Button>
-                <Button className={classes.appBarButton} color="inherit" onClick={() => {window.open(portfolioUrl);}}><LinkIcon/></Button>
+                <Button color="inherit" onClick={() => {window.open(gitHubUrl);}}><GitHubIcon/></Button>
+                <Button color="inherit" onClick={() => {window.open(contentUrl);}}><LinkIcon/></Button>
               </div>
               <div>
                 {skills.map(skill =>

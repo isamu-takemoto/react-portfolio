@@ -70,7 +70,7 @@ class Works extends React.Component {
       portfolioTitle: "Take's Portfolio",
       portfolioDate: '2020.08',
       portfolioSummary: 'React製のポートフォリオサイトです。',
-      blogImg: './images/portfolio.png',
+      blogImg: './images/blog.png',
       blogTitle: "isamblog",
       blogDate: '2019.06',
       blogSummary: '情報発信用の個人ブログです。',
@@ -89,7 +89,7 @@ class Works extends React.Component {
               <SimpleModal Images={this.state.portfolioImg} workFlag={this.state.workFlag[0]} title={this.state.portfolioTitle} date={this.state.portfolioDate} summary={this.state.portfolioSummary}/>
             </div>
             <div className={classes.app}>
-              <SimpleModal Images={this.state.portfolioImg} workFlag={this.state.workFlag[1]} title={this.state.blogTitle} date={this.state.blogDate} summary={this.state.blogSummary}/>
+              <SimpleModal Images={this.state.blogImg} workFlag={this.state.workFlag[1]} title={this.state.blogTitle} date={this.state.blogDate} summary={this.state.blogSummary}/>
             </div>
             <div className={classes.app}>
               <SimpleModal Images={this.state.portfolioImg} workFlag={this.state.workFlag[2]}/>
