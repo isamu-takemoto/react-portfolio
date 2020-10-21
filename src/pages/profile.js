@@ -115,6 +115,57 @@ const useStyles = theme => ({
       zIndex: 1,
     },
   },
+    timeline2: {
+    position: 'relative',
+    padding: `${theme.spacing(2)}px 0 ${theme.spacing(2)}px ${theme.spacing(4)}px`,
+    '& .entry': {
+      position: 'relative',
+      marginBottom: theme.spacing(4),
+      '&:after': {
+        content: '""',
+        position: 'absolute',
+        top: theme.spacing(0.25),
+        left: `-${theme.spacing(4)}px`,
+        height: theme.spacing(2),
+        width: theme.spacing(2),
+        backgroundColor: '#FFB000',
+        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 7px 10px -5px rgba(75, 192, 200, 0.2)',
+        borderRadius: '50%',
+        zIndex: 2,
+      },
+    },
+    '& p': {
+      margin: `0`,
+      color: '#666666',
+    },
+    '& .during': {
+      color: theme.palette.text.secondary,
+      marginBottom: theme.spacing(1),
+    },
+    '& .title': {
+      fontWeight: 700,
+      marginBottom: theme.spacing(1.5),
+      fontSize: 18,
+      color: '#666666',
+    },
+    '& .body': {
+      background: theme.palette.background.paper,
+      boxShadow: '0 1px 4px 1px rgba(0, 0, 0, 0.1)',
+      borderRadius: theme.spacing(1),
+      padding: theme.spacing(2),
+    },
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: theme.spacing(0.75),
+      height: '100%',
+      width: theme.spacing(0.5),
+      background: '#eaeaea',
+      borderRadius: theme.spacing(0.25),
+      zIndex: 1,
+    },
+  },
 });
 
 class Profile extends React.Component {
@@ -160,7 +211,8 @@ class Profile extends React.Component {
                       <dl>
                         <dt>自己紹介</dt>
                         <dd>千葉県出身のアラサーエンジニア。食品業界、庭業界を経てIT業界へ転身。
-                          <br/>現在は人材系BtoBサービスの開発エンジニアとしてバック・フロントを担当。
+                          <br/>現在は人材系BtoBサービスの開発エンジニアとしてバック・フロントを担当しつつ　
+                          <br/>パラレルキャリアを模索中。
                           <br/>休日は息子と遊んだりしています。</dd>
                       </dl>
                     </div>
@@ -171,7 +223,24 @@ class Profile extends React.Component {
                 <div className={classes.header}>
                   <div className={classes.name}>Career</div>
                 </div>
-                <div className={classes.timeline}>
+                <div className={classes.timeline2}>
+                  <div className="entry">
+                    <div className="header">
+                      <p className="during">2020.10 - 現在</p>
+                      <Typography variant="h3" className="title">
+                        IT企業コーポレートサイト・サービス開発 / Engineer(multiple jobs)
+                      </Typography>
+                    </div>
+                    <div className="body">
+                      <p>
+                        複業として渋谷にあるIT企業の自社サイト、Webサービス開発に従事。
+                        <br />
+                        PHP/Laravel,Bootstrap,Sass,Vueを使用し継続的に開発している。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className={classes.timeline2}>
                   <div className="entry">
                     <div className="header">
                       <p className="during">2019.10 - 現在</p>

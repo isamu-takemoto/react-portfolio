@@ -144,7 +144,7 @@ class Skills extends React.Component {
                   <div className={classes.icon}>
                     <i class="devicon-bootstrap-plain-wordmark colored"></i>
                   </div>
-                  <SimpleRating rate='2' />
+                  <SimpleRating rate='3' />
                 </div>
                 <div className={classes.skill}>
                   <div className={classes.icon}>
@@ -189,7 +189,7 @@ class Skills extends React.Component {
                   <div className={classes.icon}>
                     <i class="devicon-php-plain colored"></i>
                   </div>
-                  <SimpleRating rate='1' />
+                  <SimpleRating rate='2' />
                 </div>
                 <div className={classes.skill}>
                   <div className={classes.icon}>
@@ -201,7 +201,7 @@ class Skills extends React.Component {
                   <div className={classes.icon}>
                     <i class="devicon-laravel-plain-wordmark colored"></i>
                   </div>
-                  <SimpleRating rate='1' />
+                  <SimpleRating rate='2' />
                 </div>
                 <div className={classes.skill}>
                   <div className={classes.icon}>
@@ -228,13 +228,13 @@ class Skills extends React.Component {
                   <div className={classes.icon}>
                     <i class="devicon-git-plain-wordmark colored"></i>
                   </div>
-                  <SimpleRating rate='2' />
+                  <SimpleRating rate='3' />
                 </div>
                 <div className={classes.skill}>
                   <div className={classes.icon}>
                     <i class="devicon-github-plain-wordmark colored"></i>
                   </div>
-                  <SimpleRating rate='2' />
+                  <SimpleRating rate='3' />
                 </div>
                 <div className={classes.skill}>
                   <div className={classes.icon}>
@@ -283,13 +283,13 @@ class Skills extends React.Component {
                   <div className={classes.rate}>
                     <RatingBig rate='5' />
                     <span className={classes.guideText}>
-                      あらゆる技術を熟知している神
+                      専門書を出版できるレベル
                     </span>
                   </div>
                   <div className={classes.rate}>
                     <RatingBig rate='4' />
                     <span className={classes.guideText}>
-                      他者に技術指導できる
+                      講義できるレベル
                     </span>
                   </div>
                   <div className={classes.rate}>

@@ -112,14 +112,15 @@ export default function SimpleModal(props) {
 
   const workFlag = ['1', '2', '3', '4'];
 
-  let skills = ['React', 'Material-UI','React router'];
+  let skills = ['React', 'Material-UI','React router','Photoshop'];
 
   let skillsText = [
     'React.jsで静的サイト出力',
     'UIライブラリにMaterial UI',
     'react-router-domを使用したルーティング',
     'レスポンシブ対応',
-    'GitHub Pagesでサイトをホスティング'];
+    'GitHub Pagesでサイトをホスティング',
+    'Photoshopで画像加工'];
 
   if (props.workFlag === workFlag[1]) {
     skills = ['Wordpress',];

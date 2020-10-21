@@ -8,6 +8,14 @@ const useStyles = makeStyles({
     margin: 10,
     width: 150,
     height: 150,
+    transition:'1s all',
+    cursor: 'pointer',
+    '&:hover': {
+      width: 200,
+      height: 200,
+      transform:'scale(1.2,1.2)',
+      transition:'1s all',
+    },
   },
 });
 
